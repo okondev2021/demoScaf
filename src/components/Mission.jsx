@@ -121,7 +121,7 @@ const Mission = () => {
             <div className="achivementBgImage  w-38 text-white text-center">
               <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
                 100+ People Living <br /> with SCD Reached
-              </h4>
+              </h4>  
               <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
             </div>
             <div className="achivementBgImage w-38 text-white text-center">

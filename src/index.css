@@ -47,6 +47,10 @@
     background-repeat: no-repeat;
 }
 
+.donationHeroBgImage{
+    background-image: linear-gradient(to bottom, rgba(17, 15, 36, 0.9), rgba(17, 15, 36, 0.9)),url("./assets/achivementBgImage.webp");
+}
+
 .containerXPadding{
     @apply px-24
 }
@@ -75,5 +79,15 @@
 
 .footer-list > li{
     @apply cursor-pointer text-sm font-light text-grayDark
+}
+
+
+/* DONATION */
+.donationInputField{
+    @apply bg-white h-[40px] pl-2 outline-none
+}
+
+.donationTextArea{
+    @apply bg-white h-[120px] p-2 outline-none
 }
 
