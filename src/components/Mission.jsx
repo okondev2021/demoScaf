@@ -1,5 +1,6 @@
 import thumbNail from "../assets/thumbNail.webp";
 import play from "../assets/playIcon.svg";
+import impactImage from "../assets/impactImage.webp";
 const Mission = () => {
   return (
     <>
@@ -41,7 +42,7 @@ const Mission = () => {
           </div>
         </div>
       </section>
-      <section className="missionBgImage containerXPadding text-white my-24 py-16 flex justify-between gap-[1px] text-center">
+      <section className="missionBgImage containerXPadding text-white mt-24 py-16 flex justify-between gap-[1px] text-center">
         <div>
           <h2 className=" font-bold text-3xl mb-2">OUR MISSION</h2>
           <div class="flex items-center w-[50%] ml-auto">
@@ -83,8 +84,57 @@ const Mission = () => {
           </p>
         </div>
       </section>
-      <section className="containerXPadding text-white my-24 py-16 ">
-        
+      <section className="pl-24 text-textColor flex justify-between items-center ">
+        <div className="w-[60%] relative">
+          <div className="pb-32">
+            <h3 className="text-2xl text-redCustom font-[900]">OUR IMPACT</h3>
+            <h2 className="text-3xl font-[900]">JOURNEY SO FAR...</h2>
+            <p className="w-[80%] my-5 leading-8">
+              In 2 years, we have been able to achieve so much and create an
+              impact with our awareness programs, blood drives and blood
+              donations.
+            </p>
+            <p className="w-[80%] leading-8">
+              Our aim is to reach thousands of people living with SCD and also
+              create awareness on genotype.
+            </p>
+          </div>
+          <section className="absolute bottom-0 flex gap-3 ">
+            <div className="achivementBgImage  w-38 text-white text-center">
+              <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
+                5 Communities <br /> Reached
+              </h4>
+              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
+            </div>
+            <div className="achivementBgImage  w-38 text-white text-center">
+              <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
+                205+ Genotype <br /> Screenings
+              </h4>
+              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
+            </div>
+            <div className="achivementBgImage  w-38 text-white text-center">
+              <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
+                350+ Registered <br /> Blood Donors
+              </h4>
+              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
+            </div>
+            <div className="achivementBgImage  w-38 text-white text-center">
+              <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
+                100+ People Living <br /> with SCD Reached
+              </h4>
+              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
+            </div>
+            <div className="achivementBgImage w-38 text-white text-center">
+              <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
+                270+ Blood <br /> Donations
+              </h4>
+              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
+            </div>
+          </section>
+        </div>
+        <div className="w-[40%]">
+          <img className="h-[500px] w-full" src={impactImage} alt="" />
+        </div>
       </section>
     </>
   );

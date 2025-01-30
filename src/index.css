@@ -40,6 +40,13 @@
     background-repeat: no-repeat;
 }
 
+.achivementBgImage{
+    background-image: linear-gradient(to bottom, rgba(17, 15, 36, 0.9), rgba(17, 15, 36, 0.9)),url("./assets/achivementBgImage.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .containerXPadding{
     @apply px-24
 }
