@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Community from "./pages/Community"
 import Donation from "./pages/Donation";
+import Contact from "./pages/Contact";
 function App() {
 
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route element={<About />} path="/about" />
           <Route element={<Community />} path="/community" />
           <Route element={<Donation />} path="/donation" />
+          <Route element={<Contact />} path="/contact" />
         </Routes>
       </Router>
     </>

@@ -36,7 +36,14 @@ const NavBar = () => {
             <NavLink to="/">Blog</NavLink>
           </li>
           <li>
-            <NavLink to="/">Contact Us</NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => {
+                return isActive ? "border-b-4 border-b-redCustom pb-1" : "";
+              }}
+            >
+              Contact Us
+            </NavLink>
           </li>
           <li className="navButton">
             <NavLink to="/donation">Donate</NavLink>

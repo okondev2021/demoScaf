@@ -11,7 +11,7 @@ const DonationForm = () => {
           <h4 className=" text-textColor font-bold mb-5">
             Thank you for your donation
           </h4>
-          <form className="flex flex-col gap-6" method="post">
+          <form className="flex flex-col gap-6">
             <input
               className="donationInputField"
               type="text"
