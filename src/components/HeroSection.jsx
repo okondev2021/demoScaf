@@ -2,9 +2,9 @@ import arrowDown from "../assets/triple-arrow.svg";
 
 const HeroSection = () => {
   return (
-    <main className="heroSectionBg h-screen px-0  flex justify-center items-center flex-col text-center text-white relative z-20">
-      <h1 className="text-6xl w-[80%] font-bold">
-        Let’s help make the world a better place, a pint of{" "}
+    <main className="heroSectionBg h-screen containerXPadding flex justify-center items-center flex-col text-center text-white relative z-20">
+      <h1 className="text-6xl font-bold">
+        Let’s help make the world <br /> a better place, a pint of{" "}
         <span className=" text-redCustom">blood</span> at a time
       </h1>
       <p className="w-[60%] mt-4 font-semibold">
