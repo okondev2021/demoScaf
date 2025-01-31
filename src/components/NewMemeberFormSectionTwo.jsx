@@ -1,9 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const NewMemeberFormSectionTwo = ({ moveToFormSectionOne, stepOne }) => {
+const NewMemeberFormSectionTwo = ({
+  moveToFormSectionOne,
+  stepOne,
+  formSubmittedValue,
+}) => {
+  const [formTwo, setFormTwo] = useState({
+    yourGenotype: "",
+    genotype: "",
+    yourBloodGroup: "",
+    bloodGroup: "",
+    lastDonation: "",
+    scahf: "",
+    donationToScahf: "",
+  });
 
+  const formTwoHandleChange = (e) => {
+    setFormTwo((prevFormTwo) => {
+      return { ...prevFormTwo, [e.target.name]: e.target.value };
+    });
+  };
 
-      const [formTwo, setFormTwo] = useState({
+  useEffect(() => {
+    if (formSubmittedValue) {
+      setFormTwo({
         yourGenotype: "",
         genotype: "",
         yourBloodGroup: "",
@@ -12,17 +32,8 @@ const NewMemeberFormSectionTwo = ({ moveToFormSectionOne, stepOne }) => {
         scahf: "",
         donationToScahf: "",
       });
-    
-
-    
-      const formTwoHandleChange = (e) => {
-        setFormTwo((prevFormTwo) => {
-          return { ...prevFormTwo, [e.target.name]: e.target.value };
-        })
-      }
-
-
-
+    }
+  })
   return (
     <section className={` flex-col gap-10 ${stepOne ? "hidden" : "flex"}`}>
       <h5 className="font-bold text-textColor">

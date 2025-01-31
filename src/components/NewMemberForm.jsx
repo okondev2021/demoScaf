@@ -28,7 +28,6 @@ const NewMemberForm = () => {
     } else {
       timeoutId.current = setTimeout(() => {
         setFormSubmitted(false);
-        e.target.reset();
       }, 4000);
     }
   };
@@ -72,10 +71,12 @@ const NewMemberForm = () => {
           </div>
 
           <NewMemeberFormSectionOne
+            formSubmittedValue={formSubmitted}
             stepOne={isFormSectionOne}
             moveToFormSectionTwo={moveToFormSectionTwo}
           />
           <NewMemeberFormSectionTwo
+            formSubmittedValue={formSubmitted}
             stepOne={isFormSectionOne}
             moveToFormSectionOne={moveToFormSectionOne}
           />
