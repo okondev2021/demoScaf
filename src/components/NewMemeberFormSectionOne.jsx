@@ -55,7 +55,7 @@ const NewMemeberFormSectionOne = ({
         state: "",
       });
     }
-  });
+  }, [formSubmittedValue]);
 
   return (
     <section

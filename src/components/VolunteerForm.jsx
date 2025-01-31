@@ -1,14 +1,58 @@
-import { useState } from "react";
+import { useState, useRef, useEffect} from "react";
 
 const VolunteerForm = () => {
-
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const [volunteerForm, setVolunteerForm] = useState({
+    name: "",
+    email: "",
+    tel: "",
+    dob: "",
+    gender: "",
+    contact: "",
+    state: "",
+    education: "",
+    livingWithSickleCell: "",
+  });
+
+  const timeoutId = useRef(null);
+
+  const handleInputChange = (e) => {
+    setVolunteerForm((prevVolunteerForm) => {
+      return { ...prevVolunteerForm, [e.target.name]: e.target.value };
+    });
+  };
 
   const submitVolunteerForm = (e) => {
     e.preventDefault();
 
     setFormSubmitted(true);
-  }
+
+    // Remove Form success message
+    if (timeoutId.current) {
+      clearTimeout(timeoutId.current);
+    } else {
+      timeoutId.current = setTimeout(() => {
+        setFormSubmitted(false);
+      }, 4000);
+    }
+  };
+
+
+  useEffect(() => {
+    setVolunteerForm({
+      name: "",
+      email: "",
+      tel: "",
+      dob: "",
+      gender: "",
+      contact: "",
+      state: "",
+      education: "",
+      livingWithSickleCell: "",
+    });
+    
+  }, [formSubmitted])
 
   return (
     <section className="containerXPadding mt-10 mb-32">
@@ -49,18 +93,27 @@ const VolunteerForm = () => {
               type="text"
               placeholder="Full Name"
               required
+              onChange={handleInputChange}
+              name="name"
+              value={volunteerForm.name}
             />
             <input
               className="volunteerInputField"
               type="email"
               placeholder="E-mail Address"
               required
+              onChange={handleInputChange}
+              value={volunteerForm.email}
+              name="email"
             />
             <input
               className="volunteerInputField"
               type="tel"
               placeholder="Phone Number (Whatsapp)"
               required
+              onChange={handleInputChange}
+              value={volunteerForm.tel}
+              name="tel"
             />
             <input
               className="volunteerInputField"
@@ -73,42 +126,70 @@ const VolunteerForm = () => {
               type="text"
               placeholder="Date of birth"
               required
+              onChange={handleInputChange}
+              value={volunteerForm.dob}
+              name="dob"
             />
-            <select className="volunteerInputField" required>
-              <option disabled selected>
+            <select
+              className="volunteerInputField"
+              onChange={handleInputChange}
+              value={volunteerForm.gender}
+              name="gender"
+              required
+            >
+              <option disabled value="">
                 Gender
               </option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Euro</option>
+              <option value={"Male"}>Male</option>
+              <option value="Female">Female</option>
             </select>
             <input
               className="volunteerInputField"
               type="text"
               placeholder="Contact Address"
               required
+              onChange={handleInputChange}
+              value={volunteerForm.contact}
+              name="contact"
             />
             <input
               className="volunteerInputField"
               type="text"
               placeholder="State of origin"
               required
+              onChange={handleInputChange}
+              value={volunteerForm.state}
+              name="state"
             />
-            <select className="volunteerInputField" required>
-              <option disabled selected>
+            <select
+              className="volunteerInputField"
+              onChange={handleInputChange}
+              value={volunteerForm.education}
+              name="education"
+              required
+            >
+              <option disabled value="">
                 Educational Qualification
               </option>
-              <option>Naira</option>
-              <option>USD</option>
-              <option>Euro</option>
+              <option value="high_school">High School</option>
+              <option value="diploma">Diploma</option>
+              <option value="associate">Associate Degree</option>
+              <option value="bachelor">Bachelor's Degree</option>
+              <option value="master">Master's Degree</option>
+              <option value="doctorate">Doctorate</option>
             </select>
-            <select className="volunteerInputField" required>
-              <option disabled selected>
+            <select
+              className="volunteerInputField"
+              onChange={handleInputChange}
+              value={volunteerForm.livingWithSickleCell}
+              name="livingWithSickleCell"
+              required
+            >
+              <option disabled value="">
                 Are you livivng with sickle cell disease?
               </option>
-              <option>Naira</option>
-              <option>USD</option>
-              <option>Euro</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
             </select>
           </div>
           <div className="flex justify-center items-center w-full">

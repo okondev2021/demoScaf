@@ -33,7 +33,7 @@ const NewMemeberFormSectionTwo = ({
         donationToScahf: "",
       });
     }
-  })
+  }, [formSubmittedValue]);
   return (
     <section className={` flex-col gap-10 ${stepOne ? "hidden" : "flex"}`}>
       <h5 className="font-bold text-textColor">

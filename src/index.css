@@ -48,7 +48,16 @@
 }
 
 .donationHeroBgImage{
-    background-image: linear-gradient(to bottom, rgba(17, 15, 36, 0.9), rgba(17, 15, 36, 0.9)),url("./assets/achivementBgImage.webp");
+    background-image: linear-gradient(to bottom, rgba(17, 15, 36, 0.9), rgba(17, 15, 36, 0.9)),url("./assets/donationBgImage.jpg");
+}
+
+.volunteerHeroSection{
+    background-image: linear-gradient(to bottom, rgba(17, 15, 36, 0.9), rgba(17, 15, 36, 0.9)),url("./assets/volunteerBgImage.jpg");
+}
+
+
+.contactHeroSection{
+    background-image: linear-gradient(to bottom, rgba(17, 15, 36, 0.9), rgba(17, 15, 36, 0.9)),url("./assets/contactBgImage.jpg");
 }
 
 .containerXPadding{
