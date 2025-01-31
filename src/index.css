@@ -91,3 +91,11 @@
     @apply bg-white h-[120px] p-2 outline-none
 }
 
+
+/* VOLUNTEERS */
+
+
+.volunteerInputField{
+    @apply bg-grayMedium h-[50px] pl-2 text-gray-900
+}
+

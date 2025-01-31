@@ -29,7 +29,7 @@ const DonationForm = () => {
             />
             <div className="inputContainer flex gap-3">
               <select className="donationInputField w-full" name="" id="">
-                <option disabled>Currency</option>
+                <option disabled selected>Currency</option>
                 <option>Naira</option>
                 <option>USD</option>
                 <option>Euro</option>

@@ -32,7 +32,7 @@ const ContactForm = () => {
           </form>
         </section>
         <section>
-          <div className="mt-5 w-[4px] h-[80%] bg-textColor"></div>
+          <div className=" w-[4px] h-[80%] bg-textColor"></div>
         </section>
         <section className="w-[50%] flex flex-col gap-6">
           <div className="flex flex-col gap-3">

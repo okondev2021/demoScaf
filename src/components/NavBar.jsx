@@ -29,7 +29,14 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li className="navIcons">
-            <NavLink to="/">Blood Donor Community</NavLink>
+            <NavLink
+              to="/community"
+              className={({ isActive }) => {
+                return isActive ? "border-b-4 border-b-redCustom pb-1" : "";
+              }}
+            >
+              Blood Donor Community
+            </NavLink>
             <img src={arrowDown} alt="arrow down icon" />
           </li>
           <li>
