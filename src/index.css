@@ -3,15 +3,18 @@
 @import "tailwindcss";
 
 @theme {
+    /* SCREEN BREAK POINT */
+    --breakpoint-xs: 30rem;
+    /* COLOR */
   --color-primaryCustom: #176BFB;
   --color-greenCustom: #3CA455;
   --color-orangeCustom: #E67337;
   --color-redCustom: #fe0403;
   --color-textColor: #110F24;
-  /* --color-textColorDark: #110f24; */
   --color-grayDark: #CCCED0;
   --color-grayMedium: #ECECEE;
   --color-grayLight: #F6F6F9;
+  /* FONT FAMILY */
   --font-display: "Lato", "serif";
 }
 
@@ -61,7 +64,7 @@
 }
 
 .containerXPadding{
-    @apply px-24
+    @apply px-24 max-lg:px-8 max-md:px-5
 }
 
 .navIcons{
@@ -75,7 +78,7 @@
 
 /* MISSION SECTION */
 .missionDot{
-    @apply w-full border-[1px] text-2xl border-white border-dashed
+    @apply w-full border-[1px] text-2xl border-white border-dashed max-md:hidden
 }
 
 

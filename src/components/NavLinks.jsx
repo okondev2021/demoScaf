@@ -3,7 +3,7 @@ import arrowDown from "../assets/arrow-down.svg";
 
 const NavLinks = () => {
   return (
-    <ul className="flex items-center gap-7 text-textColor">
+    <ul className="flex items-center gap-7 max-lg:gap-4 text-textColor max-md:hidden">
       <li>
         <NavLink
           to="/"

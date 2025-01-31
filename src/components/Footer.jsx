@@ -14,8 +14,8 @@ const Footer = () => {
           <p className="text-nowrap">Bridging the knowledge gap with care</p>
         </div>
       </section>
-      <section className="flex justify-between">
-        <div className="flex flex-col gap-4">
+      <section className="flex max-md:flex-wrap max-xs:flex-col justify-between max-md:gap-4">
+        <div className="flex flex-col gap-4 max-md:gap-4">
           <section>
             <h4>Address:</h4>
             <ul className="footer-list">
@@ -74,7 +74,9 @@ const Footer = () => {
         </div>
       </section>
       <section>
-        <p className=" text-sm text-grayDark">Copyright 2020 :: Scahfng :: All rights reserved</p>
+        <p className=" text-sm text-grayDark max-md:text-center max-md:text-xs">
+          Copyright 2020 :: Scahfng :: All rights reserved
+        </p>
       </section>
     </footer>
   );

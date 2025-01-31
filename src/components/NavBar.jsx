@@ -5,11 +5,19 @@ const NavBar = () => {
     return (
       <nav className="flex justify-between items-center containerXPadding py-4 bg-white sticky top-0 z-50">
         <div>
-          <img src={logo} alt="Sickle Cell Foundation Logo" />
+          <img
+            className="max-md:h-[30px] max-md:w-[60px]"
+            src={logo}
+            alt="Sickle Cell Foundation Logo"
+          />
         </div>
         <NavLinks />
-        <div className="hidden tab:block">
-          <img src={hamburger} alt="hamburger Icon" />
+        <div className="hidden max-md:block">
+          <img
+            className="h-[30px] w-[30px]"
+            src={hamburger}
+            alt="hamburger Icon"
+          />
         </div>
       </nav>
     );
