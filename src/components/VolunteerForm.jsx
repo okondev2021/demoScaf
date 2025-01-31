@@ -78,8 +78,8 @@ const VolunteerForm = () => {
               <option disabled selected>
                 Gender
               </option>
-              <option>Naira</option>
-              <option>USD</option>
+              <option>Male</option>
+              <option>Female</option>
               <option>Euro</option>
             </select>
             <input

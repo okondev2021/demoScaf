@@ -95,7 +95,7 @@
 /* VOLUNTEERS */
 
 
-.volunteerInputField{
-    @apply bg-grayMedium h-[50px] pl-2 text-gray-900 outline-none
+.volunteerInputField, .newMemberInputField{
+    @apply bg-grayMedium h-[50px] px-2 text-gray-600 placeholder:text-gray-600 outline-none
 }
 

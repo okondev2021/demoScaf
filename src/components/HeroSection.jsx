@@ -12,10 +12,10 @@ const HeroSection = () => {
         sickle cell disease and ensuring safe blood is accessible and affordable
       </p>
       <div className="flex justify-center gap-4 mt-8">
-        <button className=" bg-redCustom rounded-md px-4 py-2 cursor-pointer">
+        <button className=" bg-redCustom hover:text-white hover:bg-transparent hover:border-2 hover:border-white rounded-md px-4 py-2 cursor-pointer">
           Donate Now
         </button>
-        <button className=" border-2 border-white text-white rounded-md px-4 py-2 cursor-pointer">
+        <button className=" hover:border-none hover:bg-redCustom hover:text-white border-2 border-white text-white rounded-md px-4 py-2 cursor-pointer">
           Become a Volunteer
         </button>
       </div>

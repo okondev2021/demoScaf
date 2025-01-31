@@ -1,6 +1,7 @@
 import thumbNail from "../assets/thumbNail.webp";
 import play from "../assets/playIcon.svg";
 import impactImage from "../assets/impactImage.webp";
+import boxIcon from "../assets/boxIcon.svg"
 const Mission = () => {
   return (
     <>
@@ -46,7 +47,7 @@ const Mission = () => {
         <div>
           <h2 className=" font-bold text-3xl mb-2">OUR MISSION</h2>
           <div class="flex items-center w-[50%] ml-auto">
-            <i class="bi bi-arrow-up-left-square"></i>
+            <img src={boxIcon} alt="" />
             <div class="missionDot"></div>
           </div>
           <p className="text-center w-[85%] mx-auto mt-4">
@@ -61,7 +62,7 @@ const Mission = () => {
           <h2 className=" font-bold text-3xl mb-2">OUR VISION</h2>
           <div class="flex items-center">
             <div class="missionDot"></div>
-            <i class="bi bi-arrow-up-left-square"></i>
+            <img src={boxIcon} alt="" />
             <div class="missionDot"></div>
           </div>
           <p className="text-center w-[85%] mx-auto mt-4">
@@ -75,7 +76,7 @@ const Mission = () => {
           <h2 className=" font-bold text-3xl mb-2">OUR VALUES</h2>
           <div className="w-[50%] mr-auto flex items-center">
             <div class="missionDot"></div>
-            <i class="bi bi-arrow-up-left-square"></i>
+            <img src={boxIcon} alt="" />
           </div>
           <p className="text-center w-[85%] mx-auto mt-4">
             We share a common passion to break the sickle cycle, thus creating
@@ -104,31 +105,31 @@ const Mission = () => {
               <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
                 5 Communities <br /> Reached
               </h4>
-              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
+              <div className="bg-gradient-to-r from-primaryCustom to-greenCustom h-[5px]"></div>
             </div>
             <div className="achivementBgImage  w-38 text-white text-center">
               <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
                 205+ Genotype <br /> Screenings
               </h4>
-              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
+              <div className="bg-gradient-to-r  from-primaryCustom to-greenCustom  h-[5px]"></div>
             </div>
             <div className="achivementBgImage  w-38 text-white text-center">
               <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
                 350+ Registered <br /> Blood Donors
               </h4>
-              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
+              <div className="bg-gradient-to-r  from-primaryCustom to-greenCustom  h-[5px]"></div>
             </div>
             <div className="achivementBgImage  w-38 text-white text-center">
               <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
                 100+ People Living <br /> with SCD Reached
-              </h4>  
-              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
+              </h4>
+              <div className="bg-gradient-to-r  from-primaryCustom to-greenCustom  h-[5px]"></div>
             </div>
             <div className="achivementBgImage w-38 text-white text-center">
               <h4 className="px-7 text-nowrap py-7 font-bold text-xs">
                 270+ Blood <br /> Donations
               </h4>
-              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[10px]"></div>
+              <div className="bg-gradient-to-r  from-primaryCustom to-greenCustom  h-[5px]"></div>
             </div>
           </section>
         </div>

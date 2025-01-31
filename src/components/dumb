@@ -1,0 +1,49 @@
+<div className="grid grid-cols-3 gap-6 ">
+        <select className="newMemberInputField" required>
+          <option disabled selected>
+            Do you know your genotype?
+          </option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+        <select className="newMemberInputField" required defaultValue={"Yes"}>
+          <option disabled selected>
+            If yes what is your genotype?
+          </option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+        <select className="newMemberInputField" required>
+          <option disabled selected>
+            Do you know your blood group?
+          </option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+        <select className="newMemberInputField" required>
+          <option disabled selected>
+            Do you know your blood group?
+          </option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+        <select className="newMemberInputField" required>
+          <option disabled valu="default">
+            When was your last donation?
+          </option>
+          <option valu >Yes</option>
+          <option>No</option>
+        </select>
+        <input
+          className="newMemberInputField"
+          type="text"
+          placeholder="Have you donated to scahf before?"
+          required
+        />
+        <input
+          className="newMemberInputField"
+          type="text"
+          placeholder="If yes when?"
+          required
+        />
+      </div>
