@@ -96,6 +96,6 @@
 
 
 .volunteerInputField{
-    @apply bg-grayMedium h-[50px] pl-2 text-gray-900
+    @apply bg-grayMedium h-[50px] pl-2 text-gray-900 outline-none
 }
 

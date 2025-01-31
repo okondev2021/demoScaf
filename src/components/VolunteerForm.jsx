@@ -1,4 +1,15 @@
+import { useState } from "react";
+
 const VolunteerForm = () => {
+
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const submitVolunteerForm = (e) => {
+    e.preventDefault();
+
+    setFormSubmitted(true);
+  }
+
   return (
     <section className="containerXPadding mt-10 mb-32">
       <div className="flex flex-col gap-6 text-textColor">
@@ -28,22 +39,28 @@ const VolunteerForm = () => {
         <h5 className="font-bold text-textColor">
           Kindly fill the form below with your correct details
         </h5>
-        <form className="mt-5 flex flex-col gap-6">
+        <form
+          onSubmit={submitVolunteerForm}
+          className="mt-5 flex flex-col gap-6"
+        >
           <div className="grid grid-cols-3 gap-6 ">
             <input
               className="volunteerInputField"
               type="text"
               placeholder="Full Name"
+              required
             />
             <input
               className="volunteerInputField"
               type="email"
               placeholder="E-mail Address"
+              required
             />
             <input
               className="volunteerInputField"
               type="tel"
               placeholder="Phone Number (Whatsapp)"
+              required
             />
             <input
               className="volunteerInputField"
@@ -55,8 +72,9 @@ const VolunteerForm = () => {
               }}
               type="text"
               placeholder="Date of birth"
+              required
             />
-            <select className="volunteerInputField">
+            <select className="volunteerInputField" required>
               <option disabled selected>
                 Gender
               </option>
@@ -68,13 +86,15 @@ const VolunteerForm = () => {
               className="volunteerInputField"
               type="text"
               placeholder="Contact Address"
+              required
             />
             <input
               className="volunteerInputField"
               type="text"
               placeholder="State of origin"
+              required
             />
-            <select className="volunteerInputField">
+            <select className="volunteerInputField" required>
               <option disabled selected>
                 Educational Qualification
               </option>
@@ -82,7 +102,7 @@ const VolunteerForm = () => {
               <option>USD</option>
               <option>Euro</option>
             </select>
-            <select className="volunteerInputField">
+            <select className="volunteerInputField" required>
               <option disabled selected>
                 Are you livivng with sickle cell disease?
               </option>
@@ -92,9 +112,21 @@ const VolunteerForm = () => {
             </select>
           </div>
           <div className="flex justify-center items-center w-full">
-            <input className=" text-sm bg-textColor px-6 py-2 text-white rounded-md" type="submit" value="Submit Form" />
+            <input
+              className=" text-sm bg-textColor px-6 py-2 text-white rounded-md cursor-pointer"
+              type="submit"
+              value="Submit Form"
+            />
           </div>
         </form>
+        {formSubmitted && (
+          <div className="text-center bg-greenCustom w-[70%] mx-auto mt-10 text-white py-2">
+            <p>
+              Thank you for joining us! You will be contacted once your form is
+              reviewed. :)
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
