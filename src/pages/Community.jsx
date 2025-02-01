@@ -1,12 +1,25 @@
+import { useState } from "react";
 import NavBar from "../components/NavBar";
+import MobileNavMenu from "../components/MobileNavMenu";
 import CommunityHeroSection from "../components/CommunityHeroSection";
 import NewMemberForm from "../components/NewMemberForm";
 import Footer from "../components/Footer";
 
 const Community = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const openNav = () => {
+    setIsNavOpen(true);
+  };
+
+  const closeNav = () => {
+    setIsNavOpen(false);
+  };
+
   return (
     <>
-      <NavBar />
+      <MobileNavMenu closeMobileNav={closeNav} mobileNavOpen={isNavOpen} />
+      <NavBar openMobileNav={openNav} />
       <CommunityHeroSection />
       <NewMemberForm />
       <Footer />

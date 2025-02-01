@@ -49,17 +49,14 @@ const NewMemberForm = () => {
           The gift of blood is the gift of life. There is no substitute for
           human blood.
         </p>
-        <p>Sign up today to join our Blood Donor community</p>
+        <p id="Error1">Sign up today to join our Blood Donor community</p>
       </div>
       <div className="mt-10">
         <form
           onSubmit={submitNewMemberForm}
           className="mt-5 flex flex-col gap-6"
         >
-          <div
-            id="progressBar"
-            className="w-full h-[3px] rounded-lg bg-grayDark mb-5"
-          >
+          <div className="w-full h-[3px] rounded-lg bg-grayDark mb-5">
             {/* isFormSectionOne */}
             <span
               className={`block h-full rounded-lg ${

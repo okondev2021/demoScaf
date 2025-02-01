@@ -1,10 +1,14 @@
 import { NavLink } from "react-router-dom";
 import arrowDown from "../assets/arrow-down.svg";
 
-const NavLinks = () => {
+const NavLinks = ({ mobileNavMenu }) => {
   return (
-    <ul className="flex items-center gap-7 max-lg:gap-4 text-textColor max-md:hidden">
-      <li>
+    <ul
+      className={`flex items-center text-textColor ${
+        mobileNavMenu ? " flex-col gap-10 max-sm:gap-8 font-bold" : "gap-7 max-lg:gap-4"
+      }`}
+    >
+      <li className="navLinks">
         <NavLink
           to="/"
           className={({ isActive }) => {
@@ -14,7 +18,7 @@ const NavLinks = () => {
           Home
         </NavLink>
       </li>
-      <li>
+      <li className="navLinks">
         <NavLink
           to="/about"
           className={({ isActive }) => {
@@ -24,7 +28,7 @@ const NavLinks = () => {
           About Us
         </NavLink>
       </li>
-      <li className="navIcons">
+      <li className="navIcons navLinks ">
         <NavLink
           to="/community"
           className={({ isActive }) => {
@@ -35,10 +39,10 @@ const NavLinks = () => {
         </NavLink>
         <img src={arrowDown} alt="arrow down icon" />
       </li>
-      <li>
+      <li className="navLinks">
         <NavLink to="/">Blog</NavLink>
       </li>
-      <li>
+      <li className="navLinks">
         <NavLink
           to="/contact"
           className={({ isActive }) => {
@@ -48,7 +52,7 @@ const NavLinks = () => {
           Contact Us
         </NavLink>
       </li>
-      <li className="navButton">
+      <li className="navButton navLinks">
         <NavLink to="/donation">Donate</NavLink>
       </li>
     </ul>

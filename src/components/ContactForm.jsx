@@ -3,9 +3,9 @@ const ContactForm = () => {
     <section>
       <div
         action="post"
-        className=" bg-grayMedium w-[70%] flex gap-10 mx-auto -mt-14 mb-24 px-14 py-10"
+        className=" bg-grayMedium w-[70%] max-lg:w-[95%] max-md:w-[70%] max-sm:w-[90%] max-md:mt-10 flex gap-10 max-lg:gap-4 max-md:gap-8 mx-auto -mt-14 max-lg:-mt-10 mb-24 px-14 max-lg:px-4 py-10 max-md:flex-col"
       >
-        <section className="w-[50%]">
+        <section className="w-[50%] max-md:w-full">
           <h4 className=" text-textColor font-bold mb-5">Get In Touch</h4>
           <form className="flex flex-col gap-6">
             <input
@@ -31,10 +31,10 @@ const ContactForm = () => {
             </div>
           </form>
         </section>
-        <section>
+        <section className="max-md:hidden">
           <div className=" w-[4px] h-[80%] bg-textColor"></div>
         </section>
-        <section className="w-[50%] flex flex-col gap-6">
+        <section className="w-[50%] max-md:w-full flex flex-col gap-6">
           <div className="flex flex-col gap-3">
             <h4 className=" text-textColor font-bold">Address:</h4>
             <p>Km 2 eleme akpajo expressway, Port Harcourt, </p>

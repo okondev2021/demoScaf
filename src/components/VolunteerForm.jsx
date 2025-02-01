@@ -87,7 +87,7 @@ const VolunteerForm = () => {
           onSubmit={submitVolunteerForm}
           className="mt-5 flex flex-col gap-6"
         >
-          <div className="grid grid-cols-3 gap-6 ">
+          <div className="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-6 ">
             <input
               className="volunteerInputField"
               type="text"

@@ -39,7 +39,7 @@ const NewMemeberFormSectionTwo = ({
       <h5 className="font-bold text-textColor">
         Step 2: Blood Donation Details
       </h5>
-      <div className="grid grid-cols-3 gap-6 ">
+      <div className="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-6 ">
         <select
           className="newMemberInputField"
           required

@@ -63,12 +63,12 @@ const NewMemeberFormSectionOne = ({
       className={` flex-col gap-10 ${stepOne ? "flex" : "hidden"}`}
     >
       {error && (
-        <div id="Error1" className="text-redCustom">
+        <div className="text-redCustom">
           {error}
         </div>
       )}
       <h5 className="font-bold text-textColor">Step 1: Bio Data</h5>
-      <div className="grid grid-cols-3 gap-6 ">
+      <div className="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-md:grid-cols-1">
         <input
           className="newMemberInputField"
           type="text"
