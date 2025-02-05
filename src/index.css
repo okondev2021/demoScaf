@@ -68,6 +68,11 @@
     background-image: linear-gradient(to bottom, rgba(17, 15, 36, 0.9), rgba(17, 15, 36, 0.9)),url("./assets/contactBgImage.jpg");
 }
 
+.aboutHeroSection{
+    background-image: linear-gradient(to bottom, rgba(17, 15, 36, 0.9), rgba(17, 15, 36, 0.9)),url("./assets/aboutBgImg.jpg");
+}
+
+
 .containerXPadding{
     @apply px-24 max-lg:px-8 max-md:px-5
 }
@@ -116,3 +121,26 @@
     @apply bg-grayMedium h-[50px] px-2 text-gray-600 placeholder:text-gray-600 outline-none
 }
 
+
+
+/* ABOUT  */
+.exco{
+    @apply flex justify-center items-center flex-col text-center gap-2
+}
+
+.excoName{
+    @apply text-textColor font-bold text-xl
+}
+
+.excoPosition{
+    @apply text-grayDark font-bold text-sm
+}
+
+
+.objectivesBox{
+    @apply float-left bg-textColor h-[15px]  w-[15px] mr-2
+}
+
+.aboutFounderSection{
+    background-image: linear-gradient(to bottom, rgba(254, 3, 3, 0.504), rgba(254, 3, 3, 0.504)),url("./assets/founder.jpg");
+}

@@ -5,7 +5,7 @@ import boxIcon from "../assets/boxIcon.svg"
 const Mission = () => {
   return (
     <>
-      <section className="containerXPadding relative mb-24 mt-28 py-16 flex justify-between items-center max-md:flex-col bg-grayLight gap-0 max-md:gap-8 ">
+      <section className="containerXPadding relative mb-24 mt-28 max-md:my-10 py-16 flex justify-between items-center max-md:flex-col bg-grayLight gap-0 max-md:gap-8 ">
         <div className="w-[50%] max-md:w-full ">
           <section className=" relative pl-4 z-40 max-md:pl-0  h-full w-[80%] max-md:w-full">
             <img
@@ -43,7 +43,7 @@ const Mission = () => {
           </div>
         </div>
       </section>
-      <section className="missionBgImage containerXPadding text-white mt-24 py-16 flex max-md:flex-col justify-between gap-[1px] max-md:gap-5 text-center">
+      <section className="missionBgImage containerXPadding text-white mt-24 max-md:mt-10 py-16 flex max-md:flex-col justify-between gap-[1px] max-md:gap-10 text-center">
         <div>
           <h2 className=" font-bold text-3xl mb-2">OUR MISSION</h2>
           <div class="flex items-center w-[50%] max-md:hidden ml-auto">
