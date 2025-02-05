@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import NavBar from "../components/NavBar";
 import MobileNavMenu from "../components/MobileNavMenu";
@@ -18,6 +18,12 @@ const Home = () => {
     setIsNavOpen(false);
   };
 
+
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }); 
+  
   return (
     <>
       <MobileNavMenu closeMobileNav={closeNav} mobileNavOpen={isNavOpen} />

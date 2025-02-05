@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import MobileNavMenu from "../components/MobileNavMenu";
 import DonationHeroSection from "../components/DonationHeroSection";
@@ -14,6 +14,11 @@ const Donation = () => {
   const closeNav = () => {
     setIsNavOpen(false);
   };
+
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }); 
 
   return (
     <>

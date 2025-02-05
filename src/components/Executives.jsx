@@ -7,11 +7,11 @@ import exco6 from "../assets/exco 6.jpg";
 
 const Executives = () => {
     return (
-      <section className="containerXPadding my-16 flex flex-col gap-24">
+      <section className="containerXPadding my-16 flex flex-col gap-24 max-sm:gap-10">
         <h2 className="font-[900] text-redCustom text-3xl max-md:text-2xl text-center">
           EXECUTIVE BOARD MEMBERS
         </h2>
-        <section className="grid grid-cols-3 gap-y-32">
+        <section className="grid grid-cols-3 gap-y-32 max-md:grid-cols-2 max-xs:grid-cols-1 max-xs:gap-y-10">
           <div className="exco">
             <img className="" src={exco1} alt="" />
             <h3 className="excoName">Dabota Omubo-Pepple</h3>

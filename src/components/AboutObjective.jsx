@@ -4,11 +4,11 @@ import quote from  "../assets/quote.png"
 const AboutObjective = () => {
   return (
     <>
-      <section className="containerXPadding my-16 flex flex-col gap-24">
+      <section className="containerXPadding my-16 flex flex-col gap-24 max-sm:gap-8">
         <h2 className="font-[900] text-redCustom text-3xl max-md:text-2xl">
           OUR OBJECTIVES
         </h2>
-        <div className="grid grid-cols-2 gap-y-10">
+        <div className="grid grid-cols-2 gap-10 max-sm:grid-cols-1">
           <div className="objectives">
             <div className="objectivesBox"></div>
             <p>
@@ -53,21 +53,23 @@ const AboutObjective = () => {
           </div>
         </div>
       </section>
-      <section className="containerXPadding my-16 flex justify-between gap-5 bg-textColor text-white py-20">
-        <div className="flex items-center justify-between w-[55%] relative pt-8">
+      <section className="containerXPadding my-16 flex justify-between max-sm:flex-col gap-5 bg-textColor text-white py-20">
+        <div className="flex  items-center justify-between w-[55%] max-sm:w-full relative pt-8">
           <div className="aboutFounderSection absolute bg-no-repeat bg-center bg-cover  left-[10%] h-[200px] w-[200px] z-10"></div>
           <img className="z-30" src={founder} alt="" />
-          <div className="z-30 flex gap-4 border-r-2 border-r-redCustom px-4 py-8">
+          <div className="z-30 flex gap-4 max-sm:gap-1 border-r-2 border-r-redCustom px-4 py-8">
             <div>
               <img src={quote} alt="" />
             </div>
             <div className="font-bold">
-              <h5 className="text-base">THE FOUNDER</h5>
-              <h3 className="text-xl">Omubo-Pepple Tamunotokini </h3>
+              <h5 className="text-base max-sm:text-sm">THE FOUNDER</h5>
+              <h3 className="text-xl max-sm:text-base ">
+                Omubo-Pepple Tamunotokini{" "}
+              </h3>
             </div>
           </div>
         </div>
-        <div className="flex flex-col text-white gap-8 w-[45%] text-sm pt-8">
+        <div className="flex flex-col text-white gap-8 max-sm:gap-4 w-[45%] max-sm:w-full text-sm pt-8">
           <p>
             A 3rd year Law student at Rivers State University, Nigeria. Having
             firsthand experience of the effect of ignorance and poor awareness

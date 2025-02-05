@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import MobileNavMenu from "../components/MobileNavMenu";
 import CommunityHeroSection from "../components/CommunityHeroSection";
@@ -16,6 +16,9 @@ const Community = () => {
     setIsNavOpen(false);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
       <MobileNavMenu closeMobileNav={closeNav} mobileNavOpen={isNavOpen} />
