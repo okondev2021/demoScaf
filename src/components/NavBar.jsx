@@ -3,7 +3,7 @@ import logo from "../assets/logo.svg"
 import hamburger from "../assets/hamburger.svg";
 const NavBar = ({ openMobileNav }) => {
   return (
-    <nav className="flex justify-between items-center containerXPadding py-4 bg-white sticky top-0 z-40">
+    <nav className="flex justify-between items-center containerXPadding py-4 bg-white sticky top-0 z-40 shadow">
       <div>
         <img
           className="max-md:h-[30px] max-md:w-[60px]"
