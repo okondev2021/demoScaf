@@ -1,21 +1,51 @@
+import { useState } from "react";
 import thumbNail from "../assets/thumbNail.webp";
 import play from "../assets/playIcon.svg";
 import impactImage from "../assets/impactImage.webp";
-import boxIcon from "../assets/boxIcon.svg"
+import boxIcon from "../assets/boxIcon.svg";
 const Mission = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayButtonClick = () => {
+    setIsPlaying(true);
+  };
   return (
     <>
       <section className="containerXPadding relative mb-24 mt-28 max-md:my-10 py-16 flex justify-between items-center max-md:flex-col bg-grayLight gap-0 max-md:gap-8 ">
         <div className="w-[50%] max-md:w-full ">
-          <section className=" relative pl-4 z-40 max-md:pl-0  h-full w-[80%] max-md:w-full">
-            <img
-              className="mx-auto w-full h-full"
-              src={thumbNail}
-              alt=" Sickle Cell Awareness and Health Foundation thumbnail"
-            />
-            <div className="absolute bottom-0 left-0 w-full h-full flex justify-center items-center">
-              <img src={play} alt="playButton icon" />
+          <section className=" relative pl-4 z-40 max-md:pl-0  h-[450px] w-[80%] max-md:w-full">
+            <div
+              onClick={() => setIsPlaying(true)}
+              className={`mx-auto w-full h-full cursor-pointer ${
+                !isPlaying ? "block" : "hidden"
+              }`}
+            >
+              <img
+                className="mx-auto w-full h-full"
+                src={thumbNail}
+                alt=" Sickle Cell Awareness and Health Foundation thumbnail"
+              />
+              <div className="absolute bottom-0 left-0 w-full h-full flex justify-center items-center">
+                <img src={play} alt="playButton icon" />
+              </div>
             </div>
+            <iframe
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              width="100%"
+              height="100%"
+              className={`mx-auto w-full h-full ${
+                isPlaying ? "block" : "hidden"
+              }`}
+              src={`https://www.youtube-nocookie.com/embed/jnl-nTrFatQ?si=uj0lotsvo_dYBeYz&amp;start=00${
+                isPlaying && "&autoplay=1"
+              }&loop=1&modestbranding=1&controls=0&rel=0`}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </section>
         </div>
         <section className="absolute z-20 top-0 h-full w-[20%] bg-textColor max-md:hidden"></section>
