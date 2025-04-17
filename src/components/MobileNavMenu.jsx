@@ -7,7 +7,7 @@ const MobileNavMenu = ({ closeMobileNav, mobileNavOpen }) => {
 
   return (
     <section
-      className={`hidden max-md:block fixed top-0 right-0 min-h-screen bg-white z-50 transition-all text-nowrap overflow-hidden duration-500 ${
+      className={`hidden max-md:block fixed top-0 right-0 min-h-screen bg-white z-[100] transition-all text-nowrap overflow-hidden duration-500 ${
         mobileNavOpen ? "w-screen opacity-100" : "w-0 px-0 opacity-0"
       }`}
     >

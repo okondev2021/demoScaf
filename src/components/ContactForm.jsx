@@ -1,4 +1,26 @@
+import { useState } from "react";
+
 const ContactForm = () => {
+
+  const [contactInfo, setContactInfo] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const isDisable = !Object.values(contactInfo).every((info) => info !== "");
+
+  const handleOnchange = (e) => {
+    setContactInfo((prevInfo) => ({
+      ...prevInfo,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleContactSubmission = (e) => {
+    e.preventDefault();
+  };
+  
   return (
     <section>
       <div
@@ -6,25 +28,39 @@ const ContactForm = () => {
         className=" bg-grayMedium w-[70%] max-lg:w-[95%] max-md:w-[70%] max-sm:w-[90%] max-md:mt-10 flex gap-10 max-lg:gap-4 max-md:gap-8 mx-auto -mt-14 max-lg:-mt-10 mb-24 px-14 max-lg:px-4 py-10 max-md:flex-col"
       >
         <section className="w-[50%] max-md:w-full">
-          <h4 className=" text-textColor font-bold mb-5">Get In Touch</h4>
-          <form className="flex flex-col gap-6">
+          <h4 className="text-textColor font-bold mb-5">Get In Touch</h4>
+          <form
+            onSubmit={handleContactSubmission}
+            method="post"
+            className="flex flex-col gap-6"
+          >
             <input
               className="donationInputField"
               type="text"
               placeholder="Name"
+              name="name"
+              onChange={handleOnchange}
+              required
             />
             <input
               className="donationInputField"
               type="email"
               placeholder="Email"
+              required
+              name="email"
+              onChange={handleOnchange}
             />
             <textarea
               placeholder="Your Message"
               className="donationTextArea"
+              required
+              name="message"
+              onChange={handleOnchange}
             ></textarea>
             <div>
               <input
-                className=" bg-redCustom rounded-md text-white px-6 py-2 text-sm"
+                disabled={isDisable}
+                className=" bg-redCustom disabled:bg-gray-500 rounded-md text-white px-6 py-2 text-sm"
                 type="submit"
                 value="Send Message"
               />

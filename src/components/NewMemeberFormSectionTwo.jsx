@@ -3,37 +3,14 @@ import { useState, useEffect } from "react";
 const NewMemeberFormSectionTwo = ({
   moveToFormSectionOne,
   stepOne,
-  formSubmittedValue,
+  updateValue,
+  formStepValue
 }) => {
-  const [formTwo, setFormTwo] = useState({
-    yourGenotype: "",
-    genotype: "",
-    yourBloodGroup: "",
-    bloodGroup: "",
-    lastDonation: "",
-    scahf: "",
-    donationToScahf: "",
-  });
 
-  const formTwoHandleChange = (e) => {
-    setFormTwo((prevFormTwo) => {
-      return { ...prevFormTwo, [e.target.name]: e.target.value };
-    });
-  };
+  const isDisabled = !Object.values(formStepValue).every(
+    (response) => response.trim() !== ""
+  );
 
-  useEffect(() => {
-    if (formSubmittedValue) {
-      setFormTwo({
-        yourGenotype: "",
-        genotype: "",
-        yourBloodGroup: "",
-        bloodGroup: "",
-        lastDonation: "",
-        scahf: "",
-        donationToScahf: "",
-      });
-    }
-  }, [formSubmittedValue]);
   return (
     <section className={` flex-col gap-10 ${stepOne ? "hidden" : "flex"}`}>
       <h5 className="font-bold text-textColor">
@@ -43,8 +20,8 @@ const NewMemeberFormSectionTwo = ({
         <select
           className="newMemberInputField"
           required
-          onChange={formTwoHandleChange}
-          value={formTwo.genotype}
+          onChange={(e) => updateValue(e, "stepTwo")}
+          value={formStepValue.genotype}
           name="genotype"
         >
           <option disabled value="">
@@ -55,9 +32,9 @@ const NewMemeberFormSectionTwo = ({
         </select>
         <select
           className="newMemberInputField"
-          onChange={formTwoHandleChange}
+          onChange={(e) => updateValue(e, "stepTwo")}
           name="yourGenotype"
-          value={formTwo.yourGenotype}
+          value={formStepValue.yourGenotype}
         >
           <option disabled value="">
             If yes what is your genotype?
@@ -70,8 +47,8 @@ const NewMemeberFormSectionTwo = ({
         </select>
         <select
           className="newMemberInputField"
-          onChange={formTwoHandleChange}
-          value={formTwo.bloodGroup}
+          onChange={(e) => updateValue(e, "stepTwo")}
+          value={formStepValue.bloodGroup}
           name="bloodGroup"
           required
         >
@@ -83,8 +60,8 @@ const NewMemeberFormSectionTwo = ({
         </select>
         <select
           className="newMemberInputField"
-          onChange={formTwoHandleChange}
-          value={formTwo.yourBloodGroup}
+          onChange={(e) => updateValue(e, "stepTwo")}
+          value={formStepValue.yourBloodGroup}
           name="yourBloodGroup"
         >
           <option disabled value="">
@@ -103,16 +80,16 @@ const NewMemeberFormSectionTwo = ({
           className="newMemberInputField"
           type="text"
           placeholder="When was your last donation?"
-          onChange={formTwoHandleChange}
+          onChange={(e) => updateValue(e, "stepTwo")}
           name="lastDonation"
-          value={formTwo.lastDonation}
+          value={formStepValue.lastDonation}
           required
         />
         <select
           className="newMemberInputField"
           required
-          onChange={formTwoHandleChange}
-          value={formTwo.scahf}
+          onChange={(e) => updateValue(e, "stepTwo")}
+          value={formStepValue.scahf}
           name="scahf"
         >
           <option disabled value="">
@@ -125,8 +102,8 @@ const NewMemeberFormSectionTwo = ({
           className="newMemberInputField"
           type="text"
           placeholder="If yes when?"
-          onChange={formTwoHandleChange}
-          value={formTwo.donationToScahf}
+          onChange={(e) => updateValue(e, "stepTwo")}
+          value={formStepValue.donationToScahf}
           name="donationToScahf"
         />
       </div>
@@ -139,7 +116,8 @@ const NewMemeberFormSectionTwo = ({
           Previous Step
         </button>
         <input
-          className=" text-sm bg-textColor px-6 py-2 text-white rounded-md cursor-pointer"
+          disabled={isDisabled}
+          className=" text-sm bg-textColor disabled:bg-gray-500 px-6 py-2 text-white rounded-md cursor-pointer"
           type="submit"
           value="Submit Form"
         />

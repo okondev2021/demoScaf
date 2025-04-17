@@ -1,6 +1,29 @@
+import { useState } from "react";
 import bank from "../assets/bankLogo.svg"
 
 const DonationForm = () => {
+
+  const [donationInfo, setDonationInfo] = useState({
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    currency: "",
+    amount: "",
+    additionalInfo: ""
+  })
+
+  const isDisable = !Object.values(donationInfo).every((info) => info !== "");
+
+  const handleOnchange = (e) => {
+    setDonationInfo((prevInfo) => (
+      {...prevInfo, [e.target.name]: e.target.value}
+    ))
+  }
+
+  const handleDonationSubmission = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <section>
       <div
@@ -11,24 +34,42 @@ const DonationForm = () => {
           <h4 className=" text-textColor font-bold mb-5">
             Thank you for your donation
           </h4>
-          <form className="flex flex-col gap-6">
+          <form
+            onSubmit={handleDonationSubmission}
+            className="flex flex-col gap-6"
+            method="post"
+          >
             <input
               className="donationInputField"
               type="text"
               placeholder="Enter Full Name"
+              name="fullName"
+              onChange={handleOnchange}
+              required
             />
             <input
               className="donationInputField"
               type="email"
               placeholder="Enter your email address"
+              name="email"
+              onChange={handleOnchange}
+              required
             />
             <input
               className="donationInputField"
               type="tel"
               placeholder="Enter your phone number"
+              name="phoneNumber"
+              onChange={handleOnchange}
+              required
             />
             <div className="inputContainer flex gap-3 max-md:flex-col max-md:gap-6">
-              <select className="donationInputField w-full" name="" id="">
+              <select
+                className="donationInputField w-full"
+                name="currency"
+                onChange={handleOnchange}
+                required
+              >
                 <option disabled selected>
                   Currency
                 </option>
@@ -40,15 +81,22 @@ const DonationForm = () => {
                 className="donationInputField"
                 type="number"
                 placeholder="Enter Amount"
+                name="amount"
+                onChange={handleOnchange}
+                required
               />
             </div>
             <textarea
               placeholder="Additional Information (Optional)"
               className="donationTextArea"
+              name="additionalInfo"
+              onChange={handleOnchange}
+              required
             ></textarea>
             <div>
               <input
-                className=" bg-greenCustom rounded-md text-white px-6 py-2 text-sm"
+                disabled={isDisable}
+                className=" bg-greenCustom disabled:bg-gray-500 rounded-md text-white px-6 py-2 text-sm"
                 type="submit"
                 value="Donate Now"
               />

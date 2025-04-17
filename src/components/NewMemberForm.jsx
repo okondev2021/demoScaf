@@ -7,6 +7,35 @@ const NewMemberForm = () => {
 
   const [isFormSectionOne, setIsFormSectionOne] = useState(true);
 
+  const [formInputs, setFormInputs] = useState({
+    stepOne: {
+      name: "",
+      email: "",
+      dob: "",
+      gender: "",
+      contact: "",
+      state: "",
+    },
+    stepTwo: {
+      yourGenotype: "",
+      genotype: "",
+      yourBloodGroup: "",
+      bloodGroup: "",
+      lastDonation: "",
+      scahf: "",
+      donationToScahf: "",
+    },
+  });
+
+
+  const handleUpdate = (e, step) => {
+    setFormInputs(prev => ({
+      ...prev,
+      [step]: { ...prev[step], [e.target.name]: e.target.value },
+    }));
+  };
+
+
   const timeoutId = useRef(null);
 
   const moveToFormSectionTwo = () => {
@@ -16,6 +45,28 @@ const NewMemberForm = () => {
   const moveToFormSectionOne = () => {
     setIsFormSectionOne(true);
   };
+
+  const resetFormInputs = () => {
+    setFormInputs({
+      stepOne: {
+        name: "",
+        email: "",
+        dob: "",
+        gender: "",
+        contact: "",
+        state: "",
+      },
+      stepTwo: {
+        yourGenotype: "",
+        genotype: "",
+        yourBloodGroup: "",
+        bloodGroup: "",
+        lastDonation: "",
+        scahf: "",
+        donationToScahf: "",
+      },
+    });
+  }
 
   const submitNewMemberForm = (e) => {
     e.preventDefault();
@@ -30,6 +81,8 @@ const NewMemberForm = () => {
         setFormSubmitted(false);
       }, 4000);
     }
+
+    resetFormInputs();
   };
 
   return (
@@ -68,14 +121,16 @@ const NewMemberForm = () => {
           </div>
 
           <NewMemeberFormSectionOne
-            formSubmittedValue={formSubmitted}
             stepOne={isFormSectionOne}
             moveToFormSectionTwo={moveToFormSectionTwo}
+            updateValue={handleUpdate}
+            formStepValue={formInputs.stepOne}
           />
           <NewMemeberFormSectionTwo
-            formSubmittedValue={formSubmitted}
             stepOne={isFormSectionOne}
             moveToFormSectionOne={moveToFormSectionOne}
+            updateValue={handleUpdate}
+            formStepValue={formInputs.stepTwo}
           />
         </form>
         {formSubmitted && (

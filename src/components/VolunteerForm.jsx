@@ -15,6 +15,8 @@ const VolunteerForm = () => {
     livingWithSickleCell: "",
   });
 
+  const isDisable = !Object.values(volunteerForm).every((info) => info !== ""); 
+
   const timeoutId = useRef(null);
 
   const handleInputChange = (e) => {
@@ -194,7 +196,8 @@ const VolunteerForm = () => {
           </div>
           <div className="flex justify-center items-center w-full">
             <input
-              className=" text-sm bg-textColor px-6 py-2 text-white rounded-md cursor-pointer"
+              disabled={isDisable}
+              className=" text-sm bg-textColor disabled:bg-gray-500 px-6 py-2 text-white rounded-md cursor-pointer"
               type="submit"
               value="Submit Form"
             />

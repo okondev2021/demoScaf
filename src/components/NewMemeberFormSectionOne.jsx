@@ -3,70 +3,20 @@ import { useRef, useState, useEffect } from "react";
 const NewMemeberFormSectionOne = ({
   moveToFormSectionTwo,
   stepOne,
-  formSubmittedValue,
+  updateValue,
+  formStepValue,
 }) => {
-  const [formOne, setFormOne] = useState({
-    name: "",
-    email: "",
-    dob: "",
-    gender: "",
-    contact: "",
-    state: "",
-  });
 
-  const [error, setError] = useState(null);
+  const isDisabled = !Object.values(formStepValue).every(
+    (response) => response.trim() !== ""
+  );
 
-  const timeoutId = useRef(null);
-
-  const validateFormOne = () => {
-    const formOneResponse = Object.values(formOne).every((response) => {
-      return response.trim() !== "";
-    });
-    if (formOneResponse) {
-      moveToFormSectionTwo();
-    } else {
-      window.location.href = "#Error1";
-      setError("Ensure you enter all requested information.");
-
-      if (timeoutId.current) {
-        clearTimeout(timeoutId.current);
-      } else {
-        timeoutId.current = setTimeout(() => {
-          setError(null);
-        }, 4000);
-      }
-    }
-  };
-
-  const formOneHandleChange = (e) => {
-    setFormOne((prevFormOne) => {
-      return { ...prevFormOne, [e.target.name]: e.target.value };
-    });
-  };
-
-  useEffect(() => {
-    if (formSubmittedValue) {
-      setFormOne({
-        name: "",
-        email: "",
-        dob: "",
-        gender: "",
-        contact: "",
-        state: "",
-      });
-    }
-  }, [formSubmittedValue]);
 
   return (
     <section
       id="formSection1"
       className={` flex-col gap-10 ${stepOne ? "flex" : "hidden"}`}
     >
-      {error && (
-        <div className="text-redCustom">
-          {error}
-        </div>
-      )}
       <h5 className="font-bold text-textColor">Step 1: Bio Data</h5>
       <div className="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-md:grid-cols-1">
         <input
@@ -75,8 +25,8 @@ const NewMemeberFormSectionOne = ({
           placeholder="Full Name"
           required
           name="name"
-          onChange={formOneHandleChange}
-          value={formOne.name}
+          onChange={(e) => updateValue(e, "stepOne")}
+          value={formStepValue.name}
         />
         <input
           className="newMemberInputField"
@@ -84,8 +34,8 @@ const NewMemeberFormSectionOne = ({
           placeholder="E-mail Address"
           required
           name="email"
-          onChange={formOneHandleChange}
-          value={formOne.email}
+          onChange={(e) => updateValue(e, "stepOne")}
+          value={formStepValue.email}
         />
         <input
           className="newMemberInputField cursor-pointer"
@@ -98,15 +48,15 @@ const NewMemeberFormSectionOne = ({
           type="text"
           placeholder="Date of birth"
           required
-          onChange={formOneHandleChange}
+          onChange={(e) => updateValue(e, "stepOne")}
           name="dob"
-          value={formOne.dob}
+          value={formStepValue.dob}
         />
         <select
           className="newMemberInputField"
           required
-          onChange={formOneHandleChange}
-          value={formOne.gender}
+          onChange={(e) => updateValue(e, "stepOne")}
+          value={formStepValue.gender}
           name="gender"
         >
           <option disabled value="">
@@ -120,8 +70,8 @@ const NewMemeberFormSectionOne = ({
           type="text"
           placeholder="Contact Address"
           required
-          onChange={formOneHandleChange}
-          value={formOne.contact}
+          onChange={(e) => updateValue(e, "stepOne")}
+          value={formStepValue.contact}
           name="contact"
         />
         <input
@@ -129,16 +79,17 @@ const NewMemeberFormSectionOne = ({
           type="text"
           placeholder="State of origin"
           required
-          onChange={formOneHandleChange}
+          onChange={(e) => updateValue(e, "stepOne")}
           name="state"
-          value={formOne.state}
+          value={formStepValue.state}
         />
       </div>
       <div className="flex justify-center items-center w-full">
         <button
-          onClick={validateFormOne}
+          onClick={moveToFormSectionTwo}
+          disabled={isDisabled}
           type="button"
-          className="text-sm bg-textColor px-6 py-2 text-white rounded-md cursor-pointer"
+          className="text-sm bg-textColor disabled:bg-gray-500 px-6 py-2 text-white rounded-md cursor-pointer"
         >
           Next Step
         </button>
