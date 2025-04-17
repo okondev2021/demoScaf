@@ -41,6 +41,7 @@ const ContactForm = () => {
               name="name"
               onChange={handleOnchange}
               required
+              value={contactInfo.name}
             />
             <input
               className="donationInputField"
@@ -49,6 +50,7 @@ const ContactForm = () => {
               required
               name="email"
               onChange={handleOnchange}
+              value={contactInfo.email}
             />
             <textarea
               placeholder="Your Message"
@@ -56,6 +58,7 @@ const ContactForm = () => {
               required
               name="message"
               onChange={handleOnchange}
+              value={contactInfo.message}
             ></textarea>
             <div>
               <input

@@ -46,6 +46,7 @@ const DonationForm = () => {
               name="fullName"
               onChange={handleOnchange}
               required
+              value={donationInfo.fullName}
             />
             <input
               className="donationInputField"
@@ -54,6 +55,7 @@ const DonationForm = () => {
               name="email"
               onChange={handleOnchange}
               required
+              value={donationInfo.email}
             />
             <input
               className="donationInputField"
@@ -62,6 +64,7 @@ const DonationForm = () => {
               name="phoneNumber"
               onChange={handleOnchange}
               required
+              value={donationInfo.phoneNumber}
             />
             <div className="inputContainer flex gap-3 max-md:flex-col max-md:gap-6">
               <select
@@ -69,8 +72,9 @@ const DonationForm = () => {
                 name="currency"
                 onChange={handleOnchange}
                 required
+                defaultValue={donationInfo.currency}
               >
-                <option disabled selected>
+                <option disabled value="">
                   Currency
                 </option>
                 <option>Naira</option>
@@ -83,6 +87,7 @@ const DonationForm = () => {
                 placeholder="Enter Amount"
                 name="amount"
                 onChange={handleOnchange}
+                value={donationInfo.amount}
                 required
               />
             </div>
@@ -92,6 +97,7 @@ const DonationForm = () => {
               name="additionalInfo"
               onChange={handleOnchange}
               required
+              value={donationInfo.additionalInfo}
             ></textarea>
             <div>
               <input
