@@ -67,7 +67,7 @@ const Footer = () => {
             <li className="flex gap-2">
               <img src={facebook} alt="social media icon" />
               <img src={instagram} alt="social media icon" />
-              <img src={twitter} alt="social media icon" />
+              {/* <img src={twitter} alt="social media icon" /> */}
               <img src={youtube} alt="social media icon" />
             </li>
           </ul>
