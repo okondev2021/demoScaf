@@ -14,10 +14,11 @@ const NavBar = ({ openMobileNav }) => {
       <div className="max-md:hidden">
         <NavLinks />
       </div>
+
       <div className="hidden max-md:block">
         <img
           onClick={openMobileNav}
-          className="h-[30px] w-[30px]"
+          className="h-[31px] w-[31px]"
           src={hamburger}
           alt="hamburger Icon"
         />
