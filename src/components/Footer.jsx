@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo2.svg";
 // social media icons
 import youtube from "../assets/youtube.svg";
-// import twitter from "../assets/twitter.svg";
+import twitter from "../assets/twitter.svg";
 import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
 const Footer = () => {
@@ -67,7 +67,7 @@ const Footer = () => {
             <li className="flex gap-2">
               <img src={facebook} alt="social media icon" />
               <img src={instagram} alt="social media icon" />
-              {/* <img src={twitter} alt="social media icon" /> */}
+              <img src={twitter} alt="social media icon" />
               <img src={youtube} alt="social media icon" />
             </li>
           </ul>
