@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo2.svg";
 // social media icons
-import youtube from "../assets/youtube.svg";
-import twitter from "../assets/twitter.svg";
-import facebook from "../assets/facebook.svg";
-import instagram from "../assets/instagram.svg";
+// import youtube from "../assets/youtube.svg";
+// import twitter from "../assets/twitter.svg";
+// import facebook from "../assets/facebook.svg";
+// import instagram from "../assets/instagram.svg";
 const Footer = () => {
   return (
     <footer className=" bg-textColor text-white containerXPadding py-10 flex flex-col gap-7">
@@ -65,10 +65,10 @@ const Footer = () => {
             <li>Follow us on your favourite</li>
             <li>social media platform</li>
             <li className="flex gap-2">
-              <img src={facebook} alt="social media icon" />
+              {/* <img src={facebook} alt="social media icon" />
               <img src={instagram} alt="social media icon" />
               <img src={twitter} alt="social media icon" />
-              <img src={youtube} alt="social media icon" />
+              <img src={youtube} alt="social media icon" /> */}
             </li>
           </ul>
         </div>
